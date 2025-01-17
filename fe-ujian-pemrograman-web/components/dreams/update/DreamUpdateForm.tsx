@@ -1,3 +1,4 @@
+/* eslint-disable  @typescript-eslint/no-explicit-any */
 "use client";
 
 import { dreamSchema, TDreamForm } from "@/schema/dream.schema";
@@ -15,8 +16,6 @@ import {
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
-import { FileUploader } from "@/components/ui/file-uploader";
-import { toast } from "sonner";
 import { useFetchData } from "@/hooks/use-fetch-data";
 import { useUpdateData } from "@/hooks/use-update-data";
 import { useEffect } from "react";
@@ -26,11 +25,6 @@ type Props = {
   slug: string;
 };
 
-type FileData = {
-  url?: string;
-  file?: File;
-};
-
 const DreamUpdateForm = ({ slug }: Props) => {
   const { data: dreamData } = useFetchData({
     queryKey: ["dreamData"],
@@ -38,16 +32,6 @@ const DreamUpdateForm = ({ slug }: Props) => {
   });
 
   const dream = dreamData?.data as TDreamForm;
-
-  const preLoadValues: TDreamForm =
-    dream !== undefined
-      ? {
-          username: dream?.username,
-          title: dream?.title,
-          description: dream?.description,
-          image: dream?.image,
-        }
-      : ({} as TDreamForm);
 
   const form = useForm<TDreamForm>({
     resolver: zodResolver(dreamSchema),
@@ -188,7 +172,7 @@ const DreamUpdateForm = ({ slug }: Props) => {
             <FormField
               control={form.control}
               name="image"
-              render={({ field }) => (
+              render={() => (
                 <div className="space-y-6">
                   <FormItem className="w-full">
                     <FormLabel>Image</FormLabel>

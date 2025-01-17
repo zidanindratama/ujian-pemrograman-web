@@ -4,15 +4,11 @@ import Footer from "@/components/main/footer";
 import Navbar from "@/components/main/navbar";
 import React from "react";
 
-type Param = {
-  slug: string;
-};
+type Params = Promise<{ slug: string }>;
 
-type Props = {
-  params: Param;
-};
+const UpdateDreamPage = async (props: { params: Params }) => {
+  const params = await props.params;
 
-const UpdateDreamPage = ({ params }: Props) => {
   return (
     <div>
       <Navbar />
