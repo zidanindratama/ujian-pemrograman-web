@@ -8,8 +8,8 @@ Check out the live demo here:
 [Dream Station](https://fe-ujian-pemrograman-web.vercel.app/)  
 
 ## Authors ✨  
+- [Dimas Arya Sauki A.](https://www.instagram.com/arya_dimas99/)  
 - [Zidan Indratama](https://www.linkedin.com/in/zidan-indratama/)  
-- [Arya Dimas](https://www.instagram.com/arya_dimas99/)  
 
 ## Features 🌟  
 - Post your dreams to the platform.  
