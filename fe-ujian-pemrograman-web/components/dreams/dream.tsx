@@ -74,7 +74,7 @@ const Dream = () => {
           <Input
             type="text"
             className=""
-            placeholder="Search articles"
+            placeholder="Search dreams"
             onChange={(e) => setSearch(e.target.value)}
           />
           <div className="flex flex-row gap-5">
